@@ -4,8 +4,8 @@ from selenium.webdriver.chrome.options import Options
 import allure
 
 # pip install allure-pytest
-# pytest --alluredir=allure-results
-# allure serve ./allure-results
+# pytest --alluredir=allure_reports
+# allure serve ./allure_reports
 # Environment Injection
 
 @allure.title("Script1-Ranjit")
