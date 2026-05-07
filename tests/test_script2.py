@@ -3,11 +3,15 @@ from selenium.webdriver import Remote
 from selenium.webdriver.chrome.options import Options
 import allure
 
+# pip install allure-pytest
+# pytest --alluredir=allure-results
+# allure serve ./allure-results
+# Environment Injection
 
 @allure.title("Script1-Ranjit")
 @allure.description("Attach screenshot to allure report")
 def test_script1():
-    grid_url = os.getenv('GRID_URL', 'http://localhost:4444')
+    grid_url = os.getenv('GRID_URL', 'http://localhost:1234')
     print(grid_url)
     
     with allure.step("Step1 : Open Chrome Browser"):
@@ -17,7 +21,7 @@ def test_script1():
         driver.get("http://www.google.com")
         
     with allure.step("Step3 : Take screenshot"):
-        allure.attach(driver.get_screenshot_as_png(), name='Google Page', attachment_type=allure.attachment())
+        allure.attach(driver.get_screenshot_as_png(), name='Google Page', attachment_type=allure.attachment_type.PNG)
         
     with allure.step("Step4 : Close the browser"):
         driver.quit()
