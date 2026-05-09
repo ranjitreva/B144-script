@@ -6,7 +6,7 @@ import allure
 # pip install allure-pytest
 # pytest --alluredir=allure_reports
 # allure serve ./allure_reports
-# Environment Injection
+# Environment Injector
 
 @allure.title("Script1-Ranjit")
 @allure.description("Attach screenshot to allure report")
@@ -25,7 +25,3 @@ def test_script1():
         
     with allure.step("Step4 : Close the browser"):
         driver.quit()
-        
-        
-        
-    
